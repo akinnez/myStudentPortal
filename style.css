@@ -1,0 +1,368 @@
+body{
+    background: url("online-communication.jpg");
+    background-position:inherit;
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* display: none; */
+      /* background: #ffd1c1; */
+  }
+  @keyframes zoom {
+      0%{
+        opacity: 0;
+        transform: rotate(20deg);
+      }
+      100%{
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+  }
+@keyframes hensaw {
+    0%{
+        position: absolute;
+        right: 0;
+        left:10%;
+        opacity: 0;
+        letter-spacing: -1.5rem;
+        /* transform:rotate(-20deg) */
+    }
+    100%{
+        position: absolute;
+        right: 0;
+        left:0;
+        opacity:1;
+        letter-spacing: 1.5rem;
+        /* transform:rotate(0deg) */
+    }
+}
+@keyframes henshaw {
+    0%{
+       transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes henshaw1 {
+    0%{
+       transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes gen {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+@keyframes gen1 {
+    0%{
+      position: absolute;
+      top: 5rem;
+      opacity: 0;
+    }
+    100%{
+      position: absolute;
+      top: 0rem;
+      opacity: 1;
+    }
+}
+h1 {
+    text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-left: 5rem;
+    color: rgb(13, 17, 50);
+  /* color:rgb(172, 172, 173); */
+  /* color: tomato; */
+  font-size: 3rem;
+  letter-spacing: 1.5rem;
+  animation: hensaw 3s ease-in-out;
+}
+h1:hover{
+    cursor: pointer;
+}
+.hs::before {
+  content: "";
+  width: 20%;
+  height: 40%;
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  bottom: 50px;
+  right: 20px;
+  animation: henshaw 20s infinite ;
+  /* transform: rotate(-30deg); */
+  border-radius: 50% 30% 20% 70%;
+  background-color:rgba(255, 255, 255, 0.3);
+  /* background-color:rgb(13, 17, 50,0.4); */
+}
+.hs::after {
+  content: "";
+  width: 20%;
+  height: 40%;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  bottom: 20px;
+  right: 0;
+  /* transform: rotate(30deg); */
+  animation: henshaw1 20s infinite ;
+  border-radius: 50% 30% 20% 70%;
+  /* background-color:rgb(13, 17, 50,0.4); */
+  background-color:rgba(255, 255, 255, 0.3);
+
+}
+#box1,
+#box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 31%;
+  max-height: 200px;
+}
+.tiny {
+  /* display: inline-block; */
+  width: 10px;
+  height: 10px;
+  margin: 20px;
+  background: rgba(5, 10, 56, 0.808);
+  transform: rotate(45deg);
+}
+#page{
+display: flex;
+flex-wrap: wrap;
+}
+#box1{
+position: absolute;
+bottom: 0;
+right: 0;
+}
+.steel{
+position: absolute;
+top: 20.7rem;
+left: 10rem;
+}
+.list{
+    text-decoration: none;
+    list-style: none;
+}
+
+#t_res,a{
+    color:rgb(13, 17, 50,0.4);
+}
+li{
+    background:#fff;
+    /* background:rgb(13, 17, 50); */
+    width: fit-content;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
+    padding: 15px;
+    animation: zoom 3s ease;
+    color: rgb(13, 17, 50);
+}
+#tr{
+  display: none;
+  width: 30%;
+  height: 400px;
+  margin-left:auto;
+  margin-right: auto;
+}
+.gen{
+  position: relative;
+  bottom: 60px;
+  margin: auto;
+  border-radius: 10%;
+  width: 80%;
+  animation: gen 3s ease;
+}
+.gen1{
+    width: 25%;
+}
+.gen2{
+    width: 30%;
+    margin-top: 7rem;
+}
+#reg1{
+  animation: gen 3s ease;
+}
+#reg2{
+  animation: gen1 3s ease;
+}
+#personal{
+    color: rgb(13, 17, 50);
+    font-weight: 600;
+    animation: gen 3s ease;
+}
+
+.personal{
+    width:50%
+}
+#btn-1{
+    background: rgb(13, 17, 50);
+    width: 25%;
+}
+.form-group{
+    margin-top: 1.5rem;
+}
+.fit{
+    margin-right: 2rem;
+}
+.fit1{
+    width:70%
+}
+.fit2{
+    margin-top: 2rem;
+}
+
+@media (max-width:768px){
+    .personal{
+        width: 75%;
+    }
+    .fit1{
+        width: 80%;
+    }
+    .gen1,.gen2{
+        width: 50%;
+    }
+    #portal{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width:1024px){
+    .hs,#box,#box1{
+        display: none;
+    }
+    .gen{
+        bottom: 0px;
+        width: 100%;
+    }
+    #tr{
+        margin-top: 3rem;
+        width: 40%;
+    }
+    h1{
+        width: 50%;
+        text-align: center;
+    }
+    .w_80{
+        width:80%
+    }
+    #page{
+        margin-top: 5rem;
+    }
+    .personal{
+        width: 75%;
+    }
+    .fit1{
+        width: 70%;
+    }
+    .steel{
+        left: 0;
+    }
+
+}
+@media (max-width:550px){
+    .personal{
+        width: 75%;
+    }
+    .fit1{
+        width: 60%;
+    }
+    #tr{
+        margin-top: 3rem;
+        width: 60%;
+    }
+    h1{
+        width: 50%;
+        font-size: 2.3rem;
+        letter-spacing:1rem 
+    }
+}
+@media (max-width:375px) {
+    #portal{
+        position: relative;
+        left:4rem;
+        width: 100%;
+  
+    }
+    h1{
+        width: 100%;
+        margin-left: 0rem;
+    }
+}
+@media (max-width:360px) {
+    .personal{
+        width: 100%;
+    }
+    .fit1{
+    width: 80%;
+}
+h1,#portal{
+    
+    width: 50%;
+    font-size: 2.3rem;
+    letter-spacing:0rem ;
+}
+#btn-1{
+    width: 50%;
+}
+#tr{
+    margin-top: 3rem;
+    width: 80%;
+}
+.w_80{
+    width: 100%;
+}
+}
+@media (max-width:320px) {
+    .btn-1{
+width: 70%;
+    }
+}
+
+@media (max-width:414px){
+    .personal{
+        width: 100%;
+    }
+    .fit{
+        margin-right: 0rem;
+    }
+    .fit1{
+        	width: 50%;
+    }
+    .fit2{
+        margin-top: 0rem;
+    }
+    #tr{
+        margin-top: 3rem;
+        width: 70%;
+    }
+    h1{
+        width: 50%;
+        font-size: 2.3rem;
+        letter-spacing:0rem 
+    }
+    .gen1,.gen2{
+        width: 75%;
+    }
+}
+
+@media (max-width:280px){
+    .personal{
+        width: 100%;
+    }
+    .fit1{
+        width: 80%;
+    }
+    .gen1,.gen2{
+        width: 100%;
+    }
+}
