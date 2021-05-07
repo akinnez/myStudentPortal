@@ -1,7 +1,6 @@
-
-getGenderOption = ["Select your gender","Male","Female"]
-getStatusOption = ["Select your status","Single","Married","Divorced"]
-var profile = []
+getGenderOption = ["Select your gender", "Male", "Female"];
+getStatusOption = ["Select your status", "Single", "Married", "Divorced"];
+var profile = [];
 loop();
 function loop() {
   for (let index = 0; index < 32; index++) {
@@ -10,23 +9,22 @@ function loop() {
   }
 }
 function textarea(params) {
-    p = dec.innerHTML;
-   inc.innerHTML = pad.value.length;
-    if (pad.value.length==100) {
-        document.getElementById("pad").setAttribute("disabled","disabled")
-    }
+  p = dec.innerHTML;
+  inc.innerHTML = pad.value.length;
+  if (pad.value.length == 100) {
+    document.getElementById("pad").setAttribute("disabled", "disabled");
+  }
 }
 
 function mPage(params) {
-  location.href="C:/Users/Ridhwan/Desktop/student_reg/student.html"
+  location.href = "https://akinnez.github.io/myStudentPortal/student.html";
 }
 function login() {
-   if (Fname.value.length == 0){
-    fname.innerHTML =`Enter your first name`
+  if (Fname.value.length == 0) {
+    fname.innerHTML = `Enter your first name`;
+  } else {
+    fname.innerHTML = " ";
   }
-  else{
-    fname.innerHTML = " "; 
-  } 
 }
 function clr() {
   fname.innerHTML = " ";
@@ -34,34 +32,31 @@ function clr() {
 function clr1(params) {
   Pin.innerHTML = " ";
 }
-function logPin(){
+function logPin() {
   if (pin.value.length == 0) {
-    Pin.innerHTML =`Enter your pin`
-    document.getElementById("btn1").setAttribute("disabled","disabled")
-  }
-  else{
-    document.getElementById("btn1").removeAttribute("disabled") 
-      Pin.innerHTML = " "; 
+    Pin.innerHTML = `Enter your pin`;
+    document.getElementById("btn1").setAttribute("disabled", "disabled");
+  } else {
+    document.getElementById("btn1").removeAttribute("disabled");
+    Pin.innerHTML = " ";
   }
 }
 function fcs() {
   if (ttx.value.length === 0) {
-    noInput.innerHTML =`Enter your first name`
-    res()
-  }
-  else{
-    document.getElementById("btn").removeAttribute("disabled")
+    noInput.innerHTML = `Enter your first name`;
+    res();
+  } else {
+    document.getElementById("btn").removeAttribute("disabled");
     noInput.innerHTML = " ";
   }
-  
 }
- function res() {    
-    document.getElementById("btn").setAttribute("disabled","disabled")
- }
+function res() {
+  document.getElementById("btn").setAttribute("disabled", "disabled");
+}
 function generate(e) {
-  var pin = Math.floor(Math.random() * 1000000000000000)
- clrAll.innerHTML = " ";
- t_res.innerHTML +=`
+  var pin = Math.floor(Math.random() * 1000000000000000);
+  clrAll.innerHTML = " ";
+  t_res.innerHTML += `
  <form class="mx-auto" style="width:75%">
  <div class="mx-auto bg-success" style="width:37px;height:37px;border-radius:100%;border:2px solid green">
   <span class="text-center text-white" style="font-size:25px;margin-left:0.3rem">✔</span></div>
@@ -81,22 +76,23 @@ function generate(e) {
               </button>
               </div>
       </div>
- `
- obj = {fname: e, pin: pin}
-        profile.push(obj)
-        console.log(profile)
-       localStorage.setItem(`${e}`,JSON.stringify(profile))
-
+ `;
+  obj = { fname: e, pin: pin };
+  profile.push(obj);
+  console.log(profile);
+  localStorage.setItem(`${e}`, JSON.stringify(profile));
 }
 function showGen() {
-document.querySelector(".steel").className="d-none"
-document.querySelector("#tr").className="d-block"
-document.querySelector("h1").style.letterSpacing="1rem"
-document.querySelector("h1").style.fontSize="2.5rem"
-document.querySelector("h1").style.animation="zoom 3s ease-in-out"
-document.querySelector("h1").innerHTML =`GENERATE YOUR PIN<br><br> JUST ONE CLICK`
+  document.querySelector(".steel").className = "d-none";
+  document.querySelector("#tr").className = "d-block";
+  document.querySelector("h1").style.letterSpacing = "1rem";
+  document.querySelector("h1").style.fontSize = "2.5rem";
+  document.querySelector("h1").style.animation = "zoom 3s ease-in-out";
+  document.querySelector(
+    "h1"
+  ).innerHTML = `GENERATE YOUR PIN<br><br> JUST ONE CLICK`;
 
-document.getElementById("tr").innerHTML += ` <div class="card shadow gen">
+  document.getElementById("tr").innerHTML += ` <div class="card shadow gen">
             <form class="w_80 mx-auto mt-3 mb-4">
               <div id="t_res" class="mt-4">
                   </div>
@@ -114,24 +110,24 @@ document.getElementById("tr").innerHTML += ` <div class="card shadow gen">
                   </div>
             </form>
           </div>
-            `
-res()
-    
+            `;
+  res();
 }
 
-function regPage1(firstname,n) {
-if (localStorage.getItem(`${firstname}`)) {
-   profile = JSON.parse(localStorage.getItem(firstname))
-}
-else{
-  fname.innerHTML= `Incorrect First Name`
-  Fname.value = " ";
-  pin.value = " ";
-}
+function regPage1(firstname, n) {
+  if (localStorage.getItem(`${firstname}`)) {
+    profile = JSON.parse(localStorage.getItem(firstname));
+  } else {
+    fname.innerHTML = `Incorrect First Name`;
+    Fname.value = " ";
+    pin.value = " ";
+  }
 
-if (firstname == profile[0].fname && parseInt(n) == profile[0].pin) {
-document.querySelector('body').innerHTML="";
-document.querySelector('body').innerHTML += `<div id="reg2" class="container-fluid m-0 p-0 d-flex justify-content-center">
+  if (firstname == profile[0].fname && parseInt(n) == profile[0].pin) {
+    document.querySelector("body").innerHTML = "";
+    document.querySelector(
+      "body"
+    ).innerHTML += `<div id="reg2" class="container-fluid m-0 p-0 d-flex justify-content-center">
     <div class="card gen2">
         <form class="w-75 mt-4 mx-auto">
           <h3 class="text-center mt-3">CREATE YOUR ACCOUNT</h3>
@@ -156,16 +152,16 @@ document.querySelector('body').innerHTML += `<div id="reg2" class="container-flu
     </div> 
     </div> 
 `;
-        
-}
-else{
-Pin.innerHTML = `Incorrect Pin`
-pin.value = " ";
-}
+  } else {
+    Pin.innerHTML = `Incorrect Pin`;
+    pin.value = " ";
+  }
 }
 function regPage() {
-document.querySelector('body').innerHTML= "";
-document.querySelector('body').innerHTML+= `<div id="reg1" class="container-fluid" style="margin-top:6rem" >
+  document.querySelector("body").innerHTML = "";
+  document.querySelector(
+    "body"
+  ).innerHTML += `<div id="reg1" class="container-fluid" style="margin-top:6rem" >
 <div class="card mx-auto gen1">
   <form class="w-75 mt-2 mx-auto" style="color:rgb(13, 17, 50) ;">
     <h3 class="text-center mt-3" style="font-weight: 700;letter-spacing:5px">LOGIN</h3>
@@ -185,19 +181,20 @@ document.querySelector('body').innerHTML+= `<div id="reg1" class="container-flui
   <hr>
   <button class="form-control btn-lg mt-1 mb-1 w-100 mx-auto text-white" style="background:rgb(13, 17, 50) ;" onclick="mPage()"> ← BACK TO HOMEPAGE</button>
 </div>
-</div>`
+</div>`;
 
-document.getElementById("btn1").setAttribute("disabled","disabled")
+  document.getElementById("btn1").setAttribute("disabled", "disabled");
 }
 
-
-function regPage2(a,b,c,d){
- profile[0].username = a;
- profile[0].email = b;
- profile[0].password = c;
-localStorage.setItem(`${d}`,JSON.stringify(profile))
-    document.querySelector('body').innerHTML= "";
-    document.querySelector('body').innerHTML += `    <div id="personal" class="container-fluid font-monospace d-flex justify-content-center mt-5">
+function regPage2(a, b, c, d) {
+  profile[0].username = a;
+  profile[0].email = b;
+  profile[0].password = c;
+  localStorage.setItem(`${d}`, JSON.stringify(profile));
+  document.querySelector("body").innerHTML = "";
+  document.querySelector(
+    "body"
+  ).innerHTML += `    <div id="personal" class="container-fluid font-monospace d-flex justify-content-center mt-5">
     <div class="personal card">
         <form class="fit1 mt-4 mx-auto">
           <h2 class="text-center">PERSONAL INFORMATION</h2>
@@ -253,19 +250,21 @@ localStorage.setItem(`${d}`,JSON.stringify(profile))
         <button  id="btn-1" class="form-control btn-lg btn-info mt-3 mb-5 mx-auto text-white" onclick="regPage3()">Next</button>
     </div>
     </div>`;
-      firstName.value = `${d}`;
-      email.value = `${b}`;
+  firstName.value = `${d}`;
+  email.value = `${b}`;
 
-    for (let s of getGenderOption) {
-      lop.innerHTML += `<option>${s}</option>`
+  for (let s of getGenderOption) {
+    lop.innerHTML += `<option>${s}</option>`;
   }
   for (let s of getStatusOption) {
-    lop1.innerHTML += `<option>${s}</option>`
+    lop1.innerHTML += `<option>${s}</option>`;
   }
 }
 function regPage3(params) {
-  document.querySelector('body').innerHTML= "";
-  document.querySelector('body').innerHTML += ` <div class="container-fluid font-monospace d-flex justify-content-center mt-5">
+  document.querySelector("body").innerHTML = "";
+  document.querySelector(
+    "body"
+  ).innerHTML += ` <div class="container-fluid font-monospace d-flex justify-content-center mt-5">
   <div class="personal card">
       <form class="fit1 mt-4 mx-auto">
         <h2 class="text-center">SPONSORS INFORMATION</h2>
@@ -294,12 +293,12 @@ function regPage3(params) {
         </div>
       <button  id="btn-1" class="form-control btn-lg btn-info mt-3 mb-5 mx-auto text-white" onclick="regPage4()">Next</button>
 </div>
-`
+`;
 }
 
 function regPage4() {
-  document.querySelector('body').innerHTML= "";
-  document.querySelector('body').innerHTML += `
+  document.querySelector("body").innerHTML = "";
+  document.querySelector("body").innerHTML += `
   
   <div class="container-fluid font-monospace d-flex justify-content-center mt-5">
   <div class="personal card">
@@ -323,5 +322,5 @@ function regPage4() {
       <button  id="btn-1" class="form-control btn-lg mt-3 mb-5 mx-auto text-white" onclick="summary()">Summary</button>
 </div>
 
-  `
+  `;
 }
